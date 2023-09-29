@@ -47,16 +47,20 @@ const Intro = () => {
                         whileInView={{left: '-24%'}}
                         transition={transition}
                         src={glassesimoji} alt="" />
-            <motion.div initial={{top: '-4%', left: '74%'}}
+            <motion.div className='floating-div'
+                        initial={{top: '-4%', left: '74%'}}
                         whileInView={{left: '68%'}}
                         transition={transition}
-                        style={{top: '-4%', left: '68%'}}>
+                        style={{top: '-4%', left: '68%'}}
+                        >
                 <FloatingDiv image={Crown} txt1="Web" txt2="Developer"/>
             </motion.div>
-            <motion.div initial={{top: '18rem', left: '9rem'}}
+            <motion.div className='floating-div'
+                        initial={{top: '18rem', left: '9rem'}}
                         whileInView={{left: '0rem'}}
                         transition={transition}
-                        style={{top: '18rem', left: '0rem'}}>
+                        style={{top: '18rem', left: '0rem'}}
+                        >
                 <FloatingDiv image={thumbup} txt1="Best Design" txt2="Award" />
             </motion.div>
 

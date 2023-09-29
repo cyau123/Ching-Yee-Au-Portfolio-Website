@@ -16,7 +16,7 @@ const Services = () => {
     const darkMode = theme.state.darkMode;
 
   return (
-    <div className="services">
+    <div className="services" id="Services">
 
         {/* left side */}
         <div className="awesome">
