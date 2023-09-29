@@ -9,13 +9,20 @@ import thumbup from '../../img/thumbup.png';
 import Crown from '../../img/crown.png';
 import glassesimoji from '../../img/glassesimoji.png';
 import FloatingDiv from '../FloatingDiv/FloatingDiv';
+import { useContext } from 'react';
+import { themeContext } from '../../Context';
+import {motion} from 'framer-motion';
 
 const Intro = () => {
+    const transition = {duration: 2, type: 'spring'};
+    const theme = useContext(themeContext);
+    const darkMode = theme.state.darkMode;
+
   return (
     <div className="intro">
         <div className="i-left">
             <div className="i-name">
-                <span>Hi! I am</span>
+                <span style = {{color: darkMode? 'white': ''}}>Hi! I am</span>
                 <span>Ching Yee</span>
                 <span>IT graduate with passion 
                     about coding and ready to contribute 
@@ -36,7 +43,10 @@ const Intro = () => {
             <img src={Vector1} alt="" />
             <img src={Vector2} alt="" />
             <img src={boy} alt="" />
-            <img src={glassesimoji} alt="" />
+            <motion.img initial={{left: '-36%'}}
+                        whileInView={{left: '-24%'}}
+                        transition={transition}
+                        src={glassesimoji} alt="" />
             <div style={{top: '-4%', left: '68%'}}>
                 <FloatingDiv image={Crown} txt1="Web" txt2="Developer"/>
             </div>
