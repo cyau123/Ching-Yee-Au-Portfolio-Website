@@ -1,7 +1,15 @@
 .n-wrapper{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     height: 10vh;
     display: flex;
     justify-content: space-between;
+    padding: 0 70px;
+    background-color: white;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
 .n-left{
@@ -42,10 +50,10 @@
 }
 
 @media screen and (max-width: 480px) {
-  .n-right{
-    display: none;
-  }
-  /*.n-button{
-    display: none;
-  }*/
+    .n-wrapper{
+        padding: 0 20px;
+    }
+    .n-right{
+        display: none;
+    }
 }

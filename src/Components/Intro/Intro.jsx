@@ -4,14 +4,15 @@ import Github from '../../img/github.png';
 import LinkedIn from '../../img/linkedin.png';
 import Vector1 from '../../img/Vector1.png';
 import Vector2 from '../../img/Vector2.png';
-import boy from '../../img/boy.png';
-import thumbup from '../../img/thumbup.png';
-import Crown from '../../img/crown.png';
+import girl from '../../img/asian-girl2.svg';
+import Gradcap from '../../img/gradcap.png';
+import Laptop from '../../img/laptop.png';
 import glassesimoji from '../../img/glassesimoji.png';
 import FloatingDiv from '../FloatingDiv/FloatingDiv';
 import { useContext } from 'react';
 import { themeContext } from '../../Context';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 const Intro = () => {
     const transition = {duration: 2, type: 'spring'};
@@ -28,12 +29,14 @@ const Intro = () => {
                     about coding and ready to contribute 
                     as a skilled software engineer</span>
             </div>
-            <button className='button i-button'>Hire me</button>
+            <Link spy={true} to='Contact' smooth={true}>
+                <button className='button i-button'>Hire me</button>
+            </Link>
             <div className="i-icons">
-                <a href='https://github.com/cyau123'>
+                <a href='https://github.com/cyau123' target='_blank' rel='noopener noreferrer'>
                     <img src={Github} alt="" />
                 </a>
-                <a href='https://www.linkedin.com/in/ching-au-melb/'>
+                <a href='https://www.linkedin.com/in/ching-au-melb/' target='_blank' rel='noopener noreferrer'>
                     <img src={LinkedIn} alt="" />
                 </a>
             </div>
@@ -42,7 +45,7 @@ const Intro = () => {
         <div className="i-right">
             <img src={Vector1} alt="" />
             <img src={Vector2} alt="" />
-            <img src={boy} alt="" />
+            <img src={girl} alt="" />
             <motion.img initial={{left: '-36%'}}
                         whileInView={{left: '-24%'}}
                         transition={transition}
@@ -51,17 +54,15 @@ const Intro = () => {
                         initial={{top: '-4%', left: '74%'}}
                         whileInView={{left: '68%'}}
                         transition={transition}
-                        style={{top: '-4%', left: '68%'}}
                         >
-                <FloatingDiv image={Crown} txt1="Web" txt2="Developer"/>
+                <FloatingDiv image={Laptop} txt1="Software" txt2="Engineer"/>
             </motion.div>
             <motion.div className='floating-div'
                         initial={{top: '18rem', left: '9rem'}}
                         whileInView={{left: '0rem'}}
                         transition={transition}
-                        style={{top: '18rem', left: '0rem'}}
                         >
-                <FloatingDiv image={thumbup} txt1="Best Design" txt2="Award" />
+                <FloatingDiv image={Gradcap} txt1="IT" txt2="Graduate" />
             </motion.div>
 
             {/* blur divs */}
