@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useRef, useState, useContext, useEffect } from 'react'
 import "./Contact.css"
 import emailjs from '@emailjs/browser'
-import {useRef} from "react"
-import { useContext } from 'react';
 import { themeContext } from '../../Context';
+import { useFormik} from 'formik';
+import * as Yup from 'yup';
 
 const Contact = () => {
     const form = useRef();
@@ -11,16 +11,37 @@ const Contact = () => {
     const [done, setDone] = useState(false);
 
     const sendEmail = (e) => {
-        e.preventDefault();
-
         emailjs.sendForm('service_uvgi2vb', 'template_7idiogt', form.current, 'uJf10YAlAIUHB0swZ')
         .then((result) => {
             console.log(result.text);
             setDone(true);
+            formik.resetForm();
         }, (error) => {
             console.log(error.text);
         });
     };
+
+    {/* Yup validation schema */}
+
+    const validationSchema = Yup.object({
+        name: Yup.string().required("Name is a required field"),
+        email: Yup.string().email("Invalid email address").required("Email is a required field"),
+        message: Yup.string()
+        .min(25, "Message must be at least 25 characters")
+        .required("Message is a required field"),
+    });
+
+    const formik = useFormik({
+        initialValues:{
+            name: "",
+            email: "",
+            message:"",
+        },
+        validationSchema: validationSchema,
+        onSubmit: (values) => {
+            sendEmail(values);
+        },
+    });
 
     const theme = useContext(themeContext);
     const darkMode = theme.state.darkMode;
@@ -36,12 +57,31 @@ const Contact = () => {
         </div>
 
         <div className="c-right">
-            <form ref={form} onSubmit={sendEmail}>
-                <input type="text" name="user_name" className='user' placeholder='Name' />
-                <input type="email" name="user_email" className='user' placeholder='Email' />
-                <textarea name="message" className="user" placeholder='Message'></textarea>
+            <form ref={form} onSubmit={formik.handleSubmit}>
+
+                {/* Name */}
+                <div className={`input-group ${formik.touched.name && formik.errors.name ? 'error' : ''}`}>
+                    <label htmlFor='name'>Name *</label>
+                    <input type="text" name="name" id="name" className='user' placeholder='Please enter your name' onChange={formik.handleChange} value={formik.values.name} />
+                    {formik.touched.name && formik.errors.name && <div className="error-message">{formik.errors.name}</div>}
+                </div>
+                
+                {/* Email address */}
+                <div className={`input-group ${formik.touched.email && formik.errors.email ? 'error' : ''}`}>
+                    <label htmlFor='email'>Email *</label>
+                    <input type="email" name="email" id="email" className='user' placeholder='Please enter your email address' onChange={formik.handleChange} value={formik.values.email} />
+                    {formik.touched.email && formik.errors.email && <div className='error-message'>{formik.errors.email}</div>}
+                </div>
+
+                {/* Message area */}
+                <div className={`input-group ${formik.touched.message && formik.errors.message ? 'error' : ''}`}>
+                    <label htmlFor='message'>Message *</label>
+                    <textarea name="message" id="message" className="user" placeholder='Please enter your message' onChange={formik.handleChange} value={formik.values.message}></textarea>
+                    {formik.touched.message && formik.errors.message && <div className='error-message'>{formik.errors.message}</div>}
+                </div>
+                
                 <input type="submit" value="Send" className='button' />
-                <span>{done && "Thanks for contacting me!"}</span>
+                <div className={done? 'success' : 'hidden'}>Thank you for reaching out! Your message has been successfully sent.</div>
                 <div className="blur c-blur1" style={{background: "var(--purple)"}}></div>
             </form>
         </div>

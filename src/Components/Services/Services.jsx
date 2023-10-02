@@ -46,7 +46,7 @@ const Services = () => {
                     style={{left: '14rem'}}>
                 <Card emoji = {HeartEmoji}
                         heading={'Web Development'}
-                        detail ={"Proficient in a variety of programming languages including HTML, CSS, JavaScript, and Java. Experience with popular web frameworks such as React.js and ASP.NET MVC."}
+                        detail ={"I have proficiency in a variety of programming languages including HTML, CSS, JavaScript, and Java. I am also experienced with popular frameworks such as React.js and ASP.NET MVC."}
                 />
             </motion.div>
 
@@ -57,7 +57,7 @@ const Services = () => {
                     style={{top: '12rem', left: "-4rem"}}>
                 <Card emoji = {Glasses}
                         heading={'Database'}
-                        detail ={"Skilled in managing diverse databases, with expertise in both relational databases like SQL and NoSQL databases such as MongoDB, Cassandra, and Neo4j."}
+                        detail ={"I am skilled in managing diverse databases, with expertise in both relational databases like SQL and NoSQL databases such as MongoDB, Cassandra, and Neo4j."}
                 />
             </motion.div>
 
@@ -68,7 +68,7 @@ const Services = () => {
                     style={{top: '19rem', left: "12rem"}}>
                 <Card emoji = {Humble}
                         heading={'UI/UX'}
-                        detail ={"Proficient in design tools like Figma for creating wireframes, prototypes, and user interfaces. "}
+                        detail ={"I am proficient in design tools like Figma for creating wireframes, prototypes, and user interfaces. "}
                 />
             </motion.div>
             <div className="blur s-blur2" style={{background: "var(--purple)"}}></div>

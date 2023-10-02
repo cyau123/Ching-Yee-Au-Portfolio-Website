@@ -33,11 +33,11 @@ const Intro = () => {
                 <button className='button i-button'>Hire me</button>
             </Link>
             <div className="i-icons">
-                <a href='https://github.com/cyau123' target='_blank' rel='noopener noreferrer'>
-                    <img src={Github} alt="" />
-                </a>
                 <a href='https://www.linkedin.com/in/ching-au-melb/' target='_blank' rel='noopener noreferrer'>
                     <img src={LinkedIn} alt="" />
+                </a>
+                <a href='https://github.com/cyau123' target='_blank' rel='noopener noreferrer'>
+                    <img src={Github} alt="" />
                 </a>
             </div>
 

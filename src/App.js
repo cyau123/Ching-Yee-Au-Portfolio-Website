@@ -20,14 +20,14 @@ function App() {
                                 background: darkMode? 'black': '',
                                 color: darkMode? 'white': '',
     }}>
-      <Navbar/>
-      <Intro/>
-      <Services/>
-      <Experience/>
-      <Portfolio/>
-      <Testimonial/>
-      <Contact/>
-      <Footer/>
+        <Navbar/>
+        <Intro/>
+        <Services/>
+        <Experience/>
+        <Portfolio/>
+        <Testimonial/>
+        <Contact/>
+        <Footer/>
     </div>
   );
 }

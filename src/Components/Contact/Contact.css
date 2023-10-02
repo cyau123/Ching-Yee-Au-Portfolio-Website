@@ -1,7 +1,7 @@
 .contact-form{
     padding: 0 3rem 0 3rem;
     display: flex;
-    height: 80vh;
+    height: 85vh;
     margin-top: 4rem;
     padding-top: 3rem;
 }
@@ -30,6 +30,16 @@
     font-size: 16px;
 }
 
+.input-group{
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    margin-bottom: 5px;
+}
+
 textarea{
     height: 4rem!important;
 }
@@ -39,14 +49,55 @@ textarea{
     left: 8rem;
 }
 
+.error label {
+    color: #cc0033;
+}
+  
+.error input[type="text"],
+.error input[type="email"],
+.error textarea {
+    background-color: #fce4e4;
+    border: 1px solid #cc0033!important;
+}
+
+.error-message{
+    color: #cc0033;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.success {
+    font-size: 16px;
+    border: 1px solid;
+    border-radius: 8px;
+	margin: 10px 0px;
+	padding: 15px 10px 15px 50px;
+	background-repeat: no-repeat;
+	background-position: 10px center;
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image: url('../../img/green-tick.svg');
+}
+
+.hidden{
+    display: none;
+}
+
 @media screen and (max-width: 480px) {
     .contact-form{
         padding: 0;
         flex-direction: column;
-        gap: 5rem;
-        height: 40rem;
+        gap: 2rem;
+        height: 50rem;
     }
+
+    .input-group{
+        width: 320px;
+    }
+
     .c-right .user{
         width: 16rem;
     }
+
+    
 }
