@@ -38,3 +38,38 @@
     filter: drop-shadow(-12px 15px 13px rgba(0,0,0,0.25));
     border-radius: 19px;
 }
+
+.player-wrapper{
+    position: relative;
+    width: 380px;
+    height: 213px;
+    border-radius: 19px;
+    overflow: hidden;
+    filter: drop-shadow(-12px 15px 13px rgba(0,0,0,0.25));
+}
+
+.react-player{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.portfolio .swiper-pagination-bullet{
+    background: #788097;
+}
+
+.portfolio .swiper-pagination-bullet-active{
+    background: var(--orange);
+}
+
+@media screen and (max-width: 480px) {
+    .player-wrapper{
+        width: 350px;
+        height: 197px;
+    }
+
+    .portfolio .swiper-pagination-bullets.swiper-pagination-horizontal{
+        bottom: inherit;
+    }
+    
+}

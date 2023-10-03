@@ -1,17 +1,41 @@
 import React from 'react'
 import './Portfolio.css'
 import {Swiper, SwiperSlide} from 'swiper/react'
-import Sidebar from "../../img/sidebar.png"
-import Ecommerce from "../../img/ecommerce.png"
-import HOC from "../../img/hoc.png"
-import MusicApp from "../../img/musicapp.png"
+import {Pagination, Navigation} from "swiper/modules"
+import 'swiper/css/pagination'
 import 'swiper/css'
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { themeContext } from '../../Context';
+import ReactPlayer from 'react-player';
+
+
 
 const Portfolio = () => {
     const theme = useContext(themeContext);
     const darkMode = theme.state.darkMode;
+
+    const [isMobileView, setIsMobileView] = useState(false);
+
+    // Update isMobileView
+     const checkScreenWidth = () => {
+        setIsMobileView(window.innerWidth <= 480);
+    };
+
+    useEffect(() => {
+        // Add an event listener to track screen width changes
+        window.addEventListener('resize', checkScreenWidth);
+
+        // Initial check for screen width
+        checkScreenWidth();
+
+        // Clean up the event listener on component unmount
+        return () => {
+        window.removeEventListener('resize', checkScreenWidth);
+        };
+    }, []);
+
+    const equityDemoVidUrl = "https://www.youtube.com/watch?v=9z0g6oKUqyk";
+    const equityProdVidUrl = "https://www.youtube.com/watch?v=y4wPB2EsYxo";
 
   return (
     <div className="portfolio" id='Portfolio'>
@@ -20,18 +44,18 @@ const Portfolio = () => {
         <span>Portfolio</span>
 
         {/* Slider */}
-        <Swiper spaceBetween={30} slidesPerView={3} grabCursor={true} className='portfolio-slider'>
+        <Swiper modules={[Pagination]} spaceBetween={30} slidesPerView={isMobileView ? 1 : 3} pagination={{clickable: true}} grabCursor={true} className='portfolio-slider'>
             <SwiperSlide>
-                <img src={Sidebar} alt="" />
+                <div className='player-wrapper'>
+                    <ReactPlayer className="react-player" url={equityDemoVidUrl} playing={false} 
+                    volume={0.5} width='100%' height='100%' controls allowFullScreen/>
+                </div>
             </SwiperSlide>
             <SwiperSlide>
-                <img src={Ecommerce} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={MusicApp} alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-                <img src={HOC} alt="" />
+                <div className='player-wrapper'>
+                    <ReactPlayer className="react-player" url={equityProdVidUrl} playing={false} 
+                    volume={0.5} width='100%' height='100%' controls allowFullScreen/>
+                </div>
             </SwiperSlide>
         </Swiper>
     </div>

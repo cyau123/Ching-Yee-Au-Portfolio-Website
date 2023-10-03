@@ -4,7 +4,7 @@ import HeartEmoji from "../../img/heartemoji.png";
 import Glasses from "../../img/glasses.png";
 import Humble from "../../img/humble.png";
 import Card from '../Card/Card';
-import Resume from './resume.pdf'
+import Resume from './Ching-Yee-Au-CV.pdf'
 import { useContext } from 'react';
 import { themeContext } from '../../Context';
 import { motion } from 'framer-motion';
