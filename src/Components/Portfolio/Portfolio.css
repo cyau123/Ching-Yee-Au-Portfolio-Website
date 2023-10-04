@@ -71,5 +71,9 @@
     .portfolio .swiper-pagination-bullets.swiper-pagination-horizontal{
         bottom: inherit;
     }
+
+    .portfolio .swiper-button-prev, .portfolio .swiper-button-next{
+        top: var(--swiper-navigation-top-offset, 60%);
+    }
     
 }

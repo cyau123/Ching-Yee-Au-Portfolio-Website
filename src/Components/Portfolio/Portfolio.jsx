@@ -4,6 +4,7 @@ import {Swiper, SwiperSlide} from 'swiper/react'
 import {Pagination, Navigation} from "swiper/modules"
 import 'swiper/css/pagination'
 import 'swiper/css'
+import 'swiper/css'
 import { useContext, useState, useEffect } from 'react';
 import { themeContext } from '../../Context';
 import ReactPlayer from 'react-player';
@@ -44,7 +45,7 @@ const Portfolio = () => {
         <span>Portfolio</span>
 
         {/* Slider */}
-        <Swiper modules={[Pagination]} spaceBetween={30} slidesPerView={isMobileView ? 1 : 3} pagination={{clickable: true}} grabCursor={true} className='portfolio-slider'>
+        <Swiper modules={[Pagination, Navigation]} spaceBetween={30} slidesPerView={isMobileView ? 1 : 3} pagination={{clickable: true}} grabCursor={true} className='portfolio-slider' navigation>
             <SwiperSlide>
                 <div className='player-wrapper'>
                     <ReactPlayer className="react-player" url={equityDemoVidUrl} playing={false} 

@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css'
 import profilePic1 from "../../img/woman1.png";
 import profilePic2 from "../../img/man1.png";
+import profilePic3 from "../../img/man2.png";
 import quotationMark from "../../img/quotation-mark.svg";
 
 const Testimonial = () => {
@@ -29,6 +30,12 @@ const Testimonial = () => {
             <br /><br />
             I wholeheartedly recommend Ching for a computer-related professional job as she possesses the qualities and skills that make her an outstanding colleague and team member.</span>,
             name: "Ruochen Wang"
+        },
+        {
+            img: profilePic3,
+            review: <span>I had the pleasure of working alongside Ching for a whole semester at our final semester at Monash and it was an insightful experience being on the same team. She proved to everyone that is capable of big things with genuine innovative ideas as well as high programming skills.
+                Her sense of responsibility helped the whole teamwork could achieve an outstanding project that was presented to different senior representatives from different companies. After an enriching experience with Ching, I'm sure that she will excel in all her future endeavors as a developer for any company.</span>,
+            name: "Eduardo Trujillo",
         },
     ]
   return (

@@ -62,21 +62,21 @@ const Contact = () => {
                 {/* Name */}
                 <div className={`input-group ${formik.touched.name && formik.errors.name ? 'error' : ''}`}>
                     <label htmlFor='name'>Name *</label>
-                    <input type="text" name="name" id="name" className='user' placeholder='Please enter your name' onChange={formik.handleChange} value={formik.values.name} />
+                    <input type="text" name="name" id="name" className={`user ${darkMode ? 'dark-mode' : ''}`} placeholder='Please enter your name' onChange={formik.handleChange} value={formik.values.name} />
                     {formik.touched.name && formik.errors.name && <div className="error-message">{formik.errors.name}</div>}
                 </div>
                 
                 {/* Email address */}
                 <div className={`input-group ${formik.touched.email && formik.errors.email ? 'error' : ''}`}>
                     <label htmlFor='email'>Email *</label>
-                    <input type="email" name="email" id="email" className='user' placeholder='Please enter your email address' onChange={formik.handleChange} value={formik.values.email} />
+                    <input type="email" name="email" id="email" className={`user ${darkMode ? 'dark-mode' : ''}`} placeholder='Please enter your email address' onChange={formik.handleChange} value={formik.values.email} />
                     {formik.touched.email && formik.errors.email && <div className='error-message'>{formik.errors.email}</div>}
                 </div>
 
                 {/* Message area */}
                 <div className={`input-group ${formik.touched.message && formik.errors.message ? 'error' : ''}`}>
                     <label htmlFor='message'>Message *</label>
-                    <textarea name="message" id="message" className="user" placeholder='Please enter your message' onChange={formik.handleChange} value={formik.values.message}></textarea>
+                    <textarea name="message" id="message" className={`user ${darkMode ? 'dark-mode' : ''}`} placeholder='Please enter your message' onChange={formik.handleChange} value={formik.values.message}></textarea>
                     {formik.touched.message && formik.errors.message && <div className='error-message'>{formik.errors.message}</div>}
                 </div>
                 

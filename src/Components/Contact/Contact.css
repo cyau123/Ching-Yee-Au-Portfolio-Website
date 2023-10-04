@@ -83,6 +83,15 @@ textarea{
     display: none;
 }
 
+.user.dark-mode {
+    background-color: rgba(255,255,255,0.26);
+    color: white;
+}
+
+.user.dark-mode::placeholder {
+    color: var(--gray);
+}
+
 @media screen and (max-width: 480px) {
     .contact-form{
         padding: 0;
@@ -98,6 +107,4 @@ textarea{
     .c-right .user{
         width: 16rem;
     }
-
-    
 }

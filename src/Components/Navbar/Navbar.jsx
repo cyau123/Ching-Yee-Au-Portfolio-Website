@@ -2,9 +2,13 @@ import React from 'react'
 import './Navbar.css'
 import Toggle from '../Toggle/Toggle'
 import { Link } from 'react-scroll';
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import { themeContext } from '../../Context';
 
 function Navbar() {
+  const theme = useContext(themeContext);
+  const darkMode = theme.state.darkMode;
+
     const headerRef = useRef(null);
   useEffect(() => {
     let preScrollPos = window.scrollY;
@@ -32,7 +36,7 @@ function Navbar() {
   }, []);
 
   return (
-    <div className="n-wrapper" ref={headerRef}>
+    <div className="n-wrapper" ref={headerRef} style={{backgroundColor: darkMode? 'black' : ''}}>
         <div className="n-left">
             <div className="n-name">Ching Yee</div>
             <Toggle/>
