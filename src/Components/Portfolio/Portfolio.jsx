@@ -37,6 +37,7 @@ const Portfolio = () => {
 
     const equityDemoVidUrl = "https://www.youtube.com/watch?v=9z0g6oKUqyk";
     const equityProdVidUrl = "https://www.youtube.com/watch?v=y4wPB2EsYxo";
+    const lemonDemoVidUrl = "https://www.youtube.com/watch?v=bE_cT0AKPu0";
 
   return (
     <div className="portfolio" id='Portfolio'>
@@ -55,6 +56,12 @@ const Portfolio = () => {
             <SwiperSlide>
                 <div className='player-wrapper'>
                     <ReactPlayer className="react-player" url={equityProdVidUrl} playing={false} 
+                    volume={0.5} width='100%' height='100%' controls allowFullScreen/>
+                </div>
+            </SwiperSlide>
+            <SwiperSlide>
+                <div className='player-wrapper'>
+                    <ReactPlayer className="react-player" url={lemonDemoVidUrl} playing={false} 
                     volume={0.5} width='100%' height='100%' controls allowFullScreen/>
                 </div>
             </SwiperSlide>
